@@ -6,11 +6,13 @@ import Distribution from '@/components/token/Distribution';
 import Vesting from '@/components/token/Vesting';
 import Halving from '@/components/token/Halving';
 import CosmicButton from '@/components/CosmicButton';
+import Navbar from '@/components/Navbar';
 
 export default function TokenPage() {
   return (
     <div className="flex flex-col items-center justify-center text-center p-4 overflow-x-hidden">
-      <div className="max-w-4xl mx-auto flex flex-col items-center py-16">
+      <Navbar />
+      <div className="max-w-4xl mx-auto flex flex-col items-center pt-24 pb-16 px-4">
         <RotatingCoin />
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-main mb-4 fade-in">
           The Deflationary Heart of the PublyFi Ecosystem.
