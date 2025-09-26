@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cosmic background helper */
+.cosmic-bg {
+  background-image: linear-gradient(135deg, #140f22 0%, #231d3b 60%);
+}
+
+:root {
+  color-scheme: dark;
+}
