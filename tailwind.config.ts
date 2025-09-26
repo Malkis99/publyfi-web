@@ -37,18 +37,26 @@ export default {
             // Custom element styles
             h1: {
               fontWeight: '700',
+              marginBottom: '1.5rem', // mb-6
             },
             h2: {
               fontWeight: '600',
-              marginTop: '2.5rem',
+              marginTop: '2.5rem', // mt-10
+              marginBottom: '1rem', // mb-4
               paddingBottom: '0.25rem',
               borderBottomWidth: '1px',
               borderBottomColor: 'rgba(163, 138, 209, 0.3)',
             },
             h3: {
               fontWeight: '600',
-              marginTop: '1.5rem',
+              marginTop: '1.5rem', // mt-6
+              marginBottom: '0.5rem', // mb-2
               color: theme('colors.accent'),
+            },
+            hr: {
+              marginTop: '3rem', // mt-12
+              marginBottom: '3rem',
+              borderColor: 'rgba(163, 138, 209, 0.2)',
             },
             p: {
               lineHeight: '1.625',
