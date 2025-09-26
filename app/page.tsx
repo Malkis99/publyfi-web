@@ -25,6 +25,11 @@ export default function HomePage() {
             href="/waitlist"
             variant="solid"
           />
+          <CosmicButton
+            label="Token"
+            href="/token"
+            variant="outline"
+          />
         </div>
         <p className="text-sm text-white/60 fade-in" style={{ animationDelay: '0.8s' }}>
           Play. Stream. Earn. Evolve.
