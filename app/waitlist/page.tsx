@@ -51,11 +51,11 @@ const WaitlistPage = () => {
                 required
               />
               {error && <p className="text-red-400 text-sm">{error}</p>}
-               <button type="submit" className="w-full">
-                <div className="px-8 py-3 rounded-lg font-semibold text-text-main transition-transform duration-300 ease-out transform hover:scale-105 focus:outline-none bg-gradient-to-r from-highlight to-accent animate-[pulse-glow_4s_infinite] shadow-glow">
-                  Join Now
-                </div>
-              </button>
+              <CosmicButton
+                label="Join Now"
+                type="submit"
+                variant="solid"
+              />
             </form>
           </div>
         )}

@@ -8,15 +8,12 @@ export default function HomePage() {
           PublyFi
         </h1>
         <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-accent mb-8 fade-in" style={{ animationDelay: '0.2s' }}>
-          Play. Stream. Earn. Evolve.
+          The new home of gaming freedom
         </p>
-        <p className="max-w-2xl mx-auto text-base sm:text-lg text-text-main/80 mb-6 fade-in" style={{ animationDelay: '0.4s' }}>
-          PublyFi is a next-generation Web3 social-gaming platform combining streaming, quests, NFT marketplace, and DAO governance. Built on Immutable zkEVM with deflationary $PUBL tokenomics.
+        <p className="max-w-2xl mx-auto text-base sm:text-lg text-text-main/80 mb-10 fade-in" style={{ animationDelay: '0.4s' }}>
+          A next-generation Web3 social ecosystem uniting streaming, interactive quests, and true digital ownership.
         </p>
-        <p className="text-sm text-text-main/60 mb-10 fade-in" style={{ animationDelay: '0.6s' }}>
-          ⚙️ Platform is under active development.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in" style={{ animationDelay: '0.8s' }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in" style={{ animationDelay: '0.6s' }}>
           <CosmicButton
             label="Whitepaper"
             href="/whitepaper"
@@ -28,6 +25,9 @@ export default function HomePage() {
             variant="solid"
           />
         </div>
+        <p className="mt-8 text-sm text-white/60 fade-in" style={{ animationDelay: '0.8s' }}>
+          Play. Stream. Earn. Evolve.
+        </p>
       </div>
       <footer className="absolute bottom-4 text-center text-text-main/50 text-sm">
         © {new Date().getFullYear()} PublyFi — All rights reserved.
