@@ -15,12 +15,12 @@ const docSections = [
   { slug: 'security-framework', title: 'Security Framework' },
   { slug: 'security-compliance', title: 'Security & Compliance' },
   { slug: 'investor-faq', title: 'Investor FAQ' },
-  { slug: 'faq-general', title: 'FAQ (General Users)' },
+  { slug: 'faq-general', title: 'FAQ' },
 ];
 
 // A simple component for fade-in transitions
 const FadeIn = ({ children, show }: { children: ReactNode; show: boolean }) => (
-  <div className={`transition-opacity duration-300 ${show ? 'opacity-100' : 'opacity-0'}`}>
+  <div className={`transition-opacity duration-200 ${show ? 'opacity-100' : 'opacity-0'}`}>
     {children}
   </div>
 );
@@ -83,10 +83,12 @@ const DocsPage = () => {
           />
 
           <section className="lg:col-span-9">
-            <div className="p-8 bg-white/5 border border-white/10 rounded-xl min-h-[60vh] prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-accent hover:prose-a:text-highlight prose-strong:text-white">
-              <FadeIn show={!loading}>
-                <ContentDisplay />
-              </FadeIn>
+            <div className="bg-white/5 border border-white/10 rounded-xl min-h-[60vh]">
+              <div className="px-6 py-10 lg:px-12 max-w-5xl mx-auto prose prose-invert prose-lg prose-headings:text-white prose-a:text-accent hover:prose-a:text-highlight prose-strong:text-white">
+                <FadeIn show={!loading}>
+                  <ContentDisplay />
+                </FadeIn>
+              </div>
             </div>
           </section>
         </div>
