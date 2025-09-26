@@ -1,6 +1,6 @@
 const AntiInflation = () => {
   return (
-    <section className="w-full max-w-4xl mx-auto py-16 px-4 fade-in-scroll">
+    <section className="w-full max-w-4xl mx-auto py-12 px-4 fade-in-scroll">
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-accent animate-title-reveal">Anti-Inflation & Deflationary Mechanics</h2>
       <p className="text-lg text-center text-text-main/80 mb-8">
         PublyFi’s layered economic safeguards maintain sustainability and fairness:

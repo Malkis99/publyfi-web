@@ -12,7 +12,7 @@ export default function TokenPage() {
   return (
     <div className="flex flex-col items-center justify-center text-center p-4 overflow-x-hidden">
       <Navbar />
-      <div className="max-w-4xl mx-auto flex flex-col items-center pt-24 pb-16 px-4">
+      <div className="max-w-4xl mx-auto flex flex-col items-center pt-20 pb-12 px-4">
         <RotatingCoin />
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-main mb-4 fade-in">
           The Deflationary Heart of the PublyFi Ecosystem.

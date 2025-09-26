@@ -19,16 +19,19 @@ export default function HomePage() {
             label="Whitepaper"
             href="/whitepaper"
             variant="outline"
+            className="w-48"
           />
           <CosmicButton
             label="Join Waitlist"
             href="/waitlist"
             variant="solid"
+            className="w-48"
           />
           <CosmicButton
             label="Token"
             href="/token"
             variant="outline"
+            className="w-48"
           />
         </div>
         <p className="text-sm text-white/60 fade-in" style={{ animationDelay: '0.8s' }}>
