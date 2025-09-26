@@ -1,12 +1,13 @@
 import CosmicButton from '@/components/CosmicButton';
+import AnimatedTitle from '@/components/AnimatedTitle';
 
 export default function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center p-4">
       <div className="max-w-4xl mx-auto flex flex-col items-center">
-        <h1 className="text-7xl sm:text-8xl lg:text-9xl font-bold text-text-main tracking-tighter mb-4 animate-[float_4s_ease-in-out_infinite] fade-in">
-          PublyFi
-        </h1>
+        <div className="mb-4">
+          <AnimatedTitle />
+        </div>
         <p className="text-xl sm:text-2xl lg:text-3xl font-semibold text-accent mb-6 fade-in" style={{ animationDelay: '0.2s' }}>
           The new home of gaming freedom
         </p>
