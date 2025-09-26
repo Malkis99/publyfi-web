@@ -31,65 +31,60 @@ export default {
             '--tw-prose-invert-bullets': theme('colors.accent'),
             '--tw-prose-invert-counters': theme('colors.accent'),
             '--tw-prose-invert-quotes': 'rgba(255, 255, 255, 0.8)',
-            '--tw-prose-invert-quote-borders': 'rgba(163, 138, 209, 0.6)',
+            '--tw-prose-invert-quote-borders': 'rgba(163, 138, 209, 0.5)',
             '--tw-prose-invert-code': theme('colors.accent'),
+
+            // Global styles for readability
+            p: {
+              fontSize: '1rem',
+              lineHeight: '1.625',
+              marginBottom: '1rem',
+            },
+            'ul, ol': {
+              paddingLeft: '1.5rem',
+            },
+            li: {
+              marginTop: '0.5rem',
+              marginBottom: '0.5rem',
+            },
 
             // Custom element styles
             h1: {
-              fontWeight: '700',
-              marginBottom: '1.5rem', // mb-6
+              fontSize: '1.875rem',
+              fontWeight: '800',
+              letterSpacing: '-0.025em',
+              color: theme('colors.white'),
+              marginBottom: '2rem',
+              textShadow: '0 0 8px rgba(163, 138, 209, 0.6)',
             },
             h2: {
+              fontSize: '1.5rem',
               fontWeight: '600',
-              marginTop: '2.5rem', // mt-10
-              marginBottom: '1rem', // mb-4
-              paddingBottom: '0.25rem',
-              borderBottomWidth: '1px',
-              borderBottomColor: 'rgba(163, 138, 209, 0.3)',
+              color: theme('colors.accent'),
+              marginTop: '2.5rem',
+              marginBottom: '0.75rem',
+              borderBottom: 'none',
+              paddingBottom: '0',
             },
             h3: {
+              fontSize: '1.25rem',
               fontWeight: '600',
-              marginTop: '1.5rem', // mt-6
-              marginBottom: '0.5rem', // mb-2
               color: theme('colors.accent'),
-            },
-            hr: {
-              marginTop: '3rem', // mt-12
-              marginBottom: '3rem',
-              borderColor: 'rgba(163, 138, 209, 0.2)',
-            },
-            p: {
-              lineHeight: '1.625',
-              marginTop: '0.5rem',
-              marginBottom: '1rem',
-            },
-            ul: {
-              paddingLeft: '1.5rem',
-            },
-            'ul > li': {
-              marginTop: '0.5rem',
-            },
-            ol: {
-              paddingLeft: '1.5rem',
-            },
-            'ol > li': {
-              marginTop: '0.5rem',
+              marginTop: '1.5rem',
+              marginBottom: '0.5rem',
             },
             blockquote: {
               paddingLeft: '1rem',
-              fontStyle: 'italic',
-            },
-            em: {
+              paddingTop: '0.5rem',
+              paddingBottom: '0.5rem',
               fontStyle: 'italic',
               color: 'rgba(255, 255, 255, 0.8)',
-            },
-            a: {
-              textDecoration: 'none',
-              '&:hover': {
-                textDecoration: 'underline',
-              },
+              backgroundColor: 'rgba(20, 15, 34, 0.3)',
+              borderLeftColor: 'rgba(163, 138, 209, 0.5)',
+              borderRadius: '0.5rem',
             },
             code: {
+              color: theme('colors.accent'),
               backgroundColor: 'rgba(255, 255, 255, 0.1)',
               padding: '0.125rem 0.375rem',
               borderRadius: '0.375rem',
@@ -97,6 +92,9 @@ export default {
             },
             'code::before': { content: '""' },
             'code::after': { content: '""' },
+            hr: {
+              display: 'none',
+            },
           },
         },
       }),

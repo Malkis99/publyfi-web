@@ -84,7 +84,7 @@ const DocsPage = () => {
 
           <section className="lg:col-span-9">
             <div className="bg-white/5 border border-white/10 rounded-xl min-h-[60vh]">
-              <div className="px-6 py-10 lg:px-12 max-w-5xl mx-auto prose prose-invert prose-lg prose-headings:text-white prose-a:text-accent hover:prose-a:text-highlight prose-strong:text-white">
+              <div className="max-w-4xl mx-auto px-4 md:px-8 py-10 prose prose-invert">
                 <FadeIn show={!loading}>
                   <ContentDisplay />
                 </FadeIn>

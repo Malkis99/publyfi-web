@@ -1,125 +1,113 @@
 # Blockchain Architecture
 
+This document details PublyFi's blockchain infrastructure, including our base network, smart contract ecosystem, multichain model, and the tokenomics of the `$PUBL` token.
+
 ## Base Network (Stage 1)
-*   **L2:** **Immutable zkEVM** (Polygon CDK) — fast, low-cost transactions, game-focused, EVM-compatible
-*   **Main Token:** **$PUBL** (ERC-20)
-*   **NFT Standards:** **ERC-721 / 1155** (equipment, cosmetics, stickers, effects)
+*   **L2:** `Immutable zkEVM` (`Polygon CDK`) — fast, low-cost transactions, game-focused, `EVM-compatible`.
+*   **Main Token:** `$PUBL` (`ERC-20`).
+*   **NFT Standards:** `ERC-721` / `ERC-1155` (equipment, cosmetics, stickers, effects).
 
 ### Key Smart Contracts
-*   **Token (PUBL):** capped supply, pause function, whitelist of approved spender contracts (marketplace, escrow, fees vault)
-*   **Marketplace:** listings, auctions, royalties to creators, platform fees in PUBL
-*   **Creator Quest Escrow:** streamers/brands deposit PUBL → unlocks only after viewer verification → unclaimed funds return automatically
+*   **Token (`PUBL`):** capped supply, pause function, whitelist of approved spender contracts (`Marketplace`, `Escrow`, `Fees Vault`).
+*   **Marketplace:** listings, auctions, royalties to creators, platform fees in `$PUBL`.
+*   **Creator Quest Escrow:** streamers/brands deposit `$PUBL` → unlocks only after viewer verification → unclaimed funds return automatically.
 *   **Prime / Pro Access:**
-    *   Prime: one-time $15 → mints NFT badge
-    *   Pro: $15/month → on-chain subscription, grace period, auto-deactivation
-    *   Payments in fiat or PUBL (oracle-based pricing)
+    *   `Prime`: one-time `$15` → mints `NFT` badge.
+    *   `Pro`: `$15`/month → on-chain subscription, grace period, auto-deactivation.
+    *   Payments in `fiat` or `$PUBL` (oracle-based pricing).
 *   **Case Factory:**
-    *   Weekly Prime Case (requires activity) → cosmetics, effects (no PUBL)
-    *   Rare drop: “1 Month Pro” voucher
-*   **Fees Vault (Buyback & Burn):** collects stablecoins/ETH from fees, buys PUBL, and burns
-*   **Reputation / Anti-Bot Oracle:** watch-time, quest clicks, quizzes, WebAuthn/FaceID → validates escrow payouts
-*   **Moderation Signals:** on-chain violations affect reputation and quest eligibility
-
----
+    *   Weekly `Prime Case` (requires activity) → cosmetics, effects (no `$PUBL`).
+    *   Rare drop: “1 Month Pro” voucher.
+*   **Fees Vault (Buyback & Burn):** collects stablecoins/`ETH` from fees, buys `$PUBL`, and burns.
+*   **Reputation / Anti-Bot Oracle:** watch-time, quest clicks, quizzes, `WebAuthn/FaceID` → validates escrow payouts.
+*   **Moderation Signals:** on-chain violations affect reputation and quest eligibility.
 
 ## Multichain Model
 
 ### Supported Networks
-*   **Solana:** fast & cheap NFT drops, tickets, cosmetics (wrapped PUBL-SPL)
-*   **Polygon:** EVM support, dApp integration (wrapped PUBL-ERC20)
-*   **BNB Chain:** large GameFi/DeFi base (wrapped PUBL-BEP20)
+*   `Solana`: fast & cheap `NFT` drops, tickets, cosmetics (wrapped `PUBL-SPL`).
+*   `Polygon`: `EVM` support, `dApp` integration (wrapped `PUBL-ERC20`).
+*   `BNB Chain`: large `GameFi/DeFi` base (wrapped `PUBL-BEP20`).
 
 ### Mechanics
-*   **Canonical Token:** PUBL on Immutable zkEVM
-*   **Bridging:** wrapped PUBL on other chains via mint/burn
-*   **NFT Mobility:** mirror or migrate via burn-to-mint
-*   **Localized Transactions:** quests run on their native chain
-*   **UI Adaptation:** auto-switch wallet network per chain
+*   **Canonical Token:** `$PUBL` on `Immutable zkEVM`.
+*   **Bridging:** wrapped `$PUBL` on other chains via `mint/burn`.
+*   **NFT Mobility:** mirror or migrate via `burn-to-mint`.
+*   **Localized Transactions:** quests run on their native chain.
+*   **UI Adaptation:** auto-switch wallet network per chain.
 
----
-
-## Tokenomics — PUBL
-*   **Max Supply:** 500,000,000 $PUBL
-*   **Blockchain:** Multi-chain (Immutable zkEVM, Solana, Polygon, BNB)
-*   **Type:** Utility + Governance
-*   **Ticker:** PUBL
+## Tokenomics — $PUBL
+*   **Max Supply:** 500,000,000 `$PUBL`
+*   **Blockchain:** Multi-chain (`Immutable zkEVM`, `Solana`, `Polygon`, `BNB`)
+*   **Type:** `Utility` + `Governance`
+*   **Ticker:** `PUBL`
 
 ### Main Utilities
-*   **Subscriptions:** pay for Prime (one-time) / Pro (monthly) in PUBL
-*   **Marketplace & Upgrades:** cosmetics, banners, access passes
-*   **Cases & Crafting:** burns PUBL for upgrades
-*   **Quests:** creator deposits → escrow → buy pressure
-*   **Non-inflationary staking:** utility perks only (no emissions)
-*   **DAO Governance:** manage parameters, fees, allocations
+*   **Subscriptions:** pay for `Prime` (one-time) / `Pro` (monthly) in `$PUBL`.
+*   **Marketplace & Upgrades:** cosmetics, banners, access passes.
+*   **Cases & Crafting:** burns `$PUBL` for upgrades.
+*   **Quests:** creator deposits → escrow → buy pressure.
+*   **Non-inflationary staking:** utility perks only (no emissions).
+*   **DAO Governance:** manage parameters, fees, allocations.
 
 ### Anti-Inflation Mechanisms
-1.  No platform PUBL giveaways — only creator-funded rewards
-2.  Hard token sinks — cosmetics, upgrades, cases burn % of PUBL
-3.  Annual halving — reward reduction per user/quest
-4.  Dynamic anti-overheat fees — increased fees during spikes
-5.  Automated buyback & burn — via Fees Vault
-6.  Non-inflationary staking — boosts only, no minting
-7.  Withdrawal throttles — cooldowns, KYC, device limits
-8.  Voluntary burns — improve reputation / loot chance
-
----
+1.  No platform `$PUBL` giveaways — only creator-funded rewards.
+2.  Hard token sinks — cosmetics, upgrades, cases burn % of `$PUBL`.
+3.  Annual halving — reward reduction per user/quest.
+4.  Dynamic anti-overheat fees — increased fees during spikes.
+5.  Automated buyback & burn — via `Fees Vault`.
+6.  Non-inflationary staking — boosts only, no minting.
+7.  Withdrawal throttles — cooldowns, `KYC`, device limits.
+8.  Voluntary burns — improve reputation / loot chance.
 
 ## Watch-to-Earn Quest Logic
-*   Creator deposits (e.g. 5,000 PUBL → 1,000 slots × 5 PUBL each)
+*   Creator deposits (e.g. 5,000 `$PUBL` → 1,000 slots × 5 `$PUBL` each).
 *   Viewer must:
-    *   Watch stream
-    *   Say code words
-    *   Pass quizzes/polls
-    *   Verify via WebAuthn / FaceID
-*   Oracle validation ensures only real users receive payouts
-*   Unused funds refunded; 5% fee → Buyback & Burn
-
----
+    *   Watch stream.
+    *   Say code words.
+    *   Pass quizzes/polls.
+    *   Verify via `WebAuthn` / `FaceID`.
+*   Oracle validation ensures only real users receive payouts.
+*   Unused funds refunded; 5% fee → `Buyback & Burn`.
 
 ## NFT Tiers & Economy
-*   **Rarities:** Common → Rare → Epic → Legendary → Mythic
-*   **Stats:** EXP, drop chance, +0.1% PUBL boost (DAO-governed caps)
-*   **Seasons:** Limited edition collections, tradable post-season
-*   **Crafting:** Combine NFTs + PUBL → upgrade rarity (PUBL burned)
-*   **Epic Tier:** requires more collectibles for upgrade
-
----
+*   **Rarities:** `Common` → `Rare` → `Epic` → `Legendary` → `Mythic`.
+*   **Stats:** `EXP`, drop chance, `+0.1% $PUBL` boost (`DAO`-governed caps).
+*   **Seasons:** Limited edition collections, tradable post-season.
+*   **Crafting:** Combine `NFTs` + `$PUBL` → upgrade rarity (`$PUBL` burned).
+*   **Epic Tier:** requires more collectibles for upgrade.
 
 ## Subscriptions
 
 ### Prime ($15 one-time)
-*   3D avatar customization
-*   Weekly NFT case
-*   Rank badge & level-up
-*   Required for Pro unlock
-*   Reputation access
+*   3D avatar customization.
+*   Weekly `NFT` case.
+*   Rank badge & level-up.
+*   Required for `Pro` unlock.
+*   Reputation access.
 
 ### Pro ($15/month)
-*   Complete quests → earn PUBL + NFTs
-*   Monthly “Pro Case” (higher rarity)
-*   Profile rank boost
-*   Extra reputation from clips/reels/quests
-*   Exclusive cosmetics, event access
-*   KYC required
-
----
+*   Complete quests → earn `$PUBL` + `NFTs`.
+*   Monthly “Pro Case” (higher rarity).
+*   Profile rank boost.
+*   Extra reputation from clips/reels/quests.
+*   Exclusive cosmetics, event access.
+*   `KYC` required.
 
 ## NFT Customization
-*   Armor, skins, weapons → wearable on 3D avatar
-*   Sources: cases, marketplace, quests, events
+*   Armor, skins, weapons → wearable on 3D avatar.
+*   Sources: cases, marketplace, quests, events.
 *   Styles: Cyberpunk, Fantasy, Military, etc.
-*   Tradable: cross-chain (zkEVM ⇄ Solana ⇄ BNB)
-
----
+*   Tradable: cross-chain (`zkEVM` ⇄ `Solana` ⇄ `BNB`).
 
 ## Anti-Farming System
-1.  Multi-level KYC (FaceID, docs via SumSub/Onfido)
-2.  Device binding (unique hash)
-3.  Behavioral AI (clicks, sessions, speed)
-4.  Account creation limits (per IP/device/payment)
-5.  Proof of Human (minigames, mouse tracking)
-6.  Inventory delay (NFT trade after 7–14 days)
-7.  Economic monitoring (freeze abnormal wallets)
-8.  Reputation perks (high rep = better rewards)
-9.  Cross-chain spam filters & tx limits
-10. Delayed trading (new rewards locked 7 days)
+1.  Multi-level `KYC` (`FaceID`, docs via `SumSub`/`Onfido`).
+2.  Device binding (unique hash).
+3.  Behavioral `AI` (clicks, sessions, speed).
+4.  Account creation limits (per `IP`/device/payment).
+5.  Proof of Human (minigames, mouse tracking).
+6.  Inventory delay (`NFT` trade after 7–14 days).
+7.  Economic monitoring (freeze abnormal wallets).
+8.  Reputation perks (high rep = better rewards).
+9.  Cross-chain spam filters & tx limits.
+10. Delayed trading (new rewards locked 7 days).
