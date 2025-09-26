@@ -8,8 +8,8 @@ const RotatingCoin = () => {
         <Image
           src="/images/PublyFi_Platform_Token.png"
           alt="PublyFi Token"
-          width={200}
-          height={200}
+          width={250}
+          height={250}
           className={styles.coinImage}
         />
       </div>

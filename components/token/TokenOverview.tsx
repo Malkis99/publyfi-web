@@ -1,7 +1,7 @@
 const TokenOverview = () => {
   return (
     <section className="w-full max-w-4xl mx-auto py-16 px-4 fade-in-scroll">
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-accent">Token Overview</h2>
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-accent animate-title-reveal">Token Overview</h2>
       <p className="text-lg text-center text-text-main/80 mb-8">
         PublyFi’s native token $PUBL powers every core system — from subscriptions and marketplace transactions to quests, crafting, and governance. It is a deflationary, utility-driven, and governance-enabled asset designed for sustainable growth.
       </p>

@@ -64,3 +64,24 @@
   animation-range-start: entry 10%;
   animation-range-end: cover 40%;
 }
+
+@keyframes title-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    text-shadow: 0 0 2px rgba(163, 138, 209, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 12px rgba(163, 138, 209, 0.5);
+  }
+}
+
+.animate-title-reveal {
+  opacity: 0;
+  animation: title-reveal 1s ease-out forwards;
+  animation-timeline: view();
+  animation-range-start: entry 10%;
+  animation-range-end: cover 30%;
+}
