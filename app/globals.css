@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cosmic background helper */
+.cosmic-bg {
+  background-image: linear-gradient(135deg, #140f22 0%, #231d3b 60%);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 8px rgba(163, 138, 209, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 16px rgba(163, 138, 209, 0.7);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeInScroll {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-scroll {
+  opacity: 0;
+  animation: fadeInScroll 0.8s ease-out forwards;
+  animation-timeline: view();
+  animation-range-start: entry 10%;
+  animation-range-end: cover 40%;
+}
+
+@keyframes title-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    text-shadow: 0 0 2px rgba(163, 138, 209, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 12px rgba(163, 138, 209, 0.5);
+  }
+}
+
+.animate-title-reveal {
+  opacity: 0;
+  animation: title-reveal 1s ease-out forwards;
+  animation-timeline: view();
+  animation-range-start: entry 10%;
+  animation-range-end: cover 30%;
+}
