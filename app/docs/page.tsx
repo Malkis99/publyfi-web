@@ -14,6 +14,7 @@ const docSections = [
   { slug: 'blockchain-architecture', title: 'Blockchain Architecture' },
   { slug: 'security-framework', title: 'Security Framework' },
   { slug: 'security-compliance', title: 'Security & Compliance' },
+  { slug: 'investor-faq', title: 'Investor FAQ' },
 ];
 
 // A simple component for fade-in transitions
