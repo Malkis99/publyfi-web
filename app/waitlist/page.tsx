@@ -59,6 +59,15 @@ const WaitlistPage = () => {
             </form>
           </div>
         )}
+
+        <div className="mt-8 border-t border-white/10 pt-6 text-center">
+          <p className="mb-4 text-text-main/60">
+            Explore our ecosystem and architecture.
+          </p>
+          <Link href="/docs" passHref>
+            <CosmicButton label="Docs" variant="outline" />
+          </Link>
+        </div>
       </div>
     </div>
   );
