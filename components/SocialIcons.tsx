@@ -12,7 +12,7 @@ const socialLinks = [
   },
   {
     name: 'Telegram',
-    href: 'https://t.me/noquit_fx',
+    href: 'https://t.me/publyfi',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="26" height="26">
         <path d="M9.993 16.572l-.397 5.594c.566 0 .81-.242 1.1-.532l2.636-2.516 5.463 4.006c1 .552 1.718.263 1.996-.926l3.619-17.06.001-.001c.32-1.487-.539-2.07-1.519-1.707L1.107 9.908c-1.452.565-1.43 1.375-.248 1.744l5.356 1.67L18.98 5.635c.6-.396 1.145-.177.696.253z"/>
@@ -41,21 +41,19 @@ const socialLinks = [
 
 const SocialIcons = () => {
   return (
-    <div className="fixed bottom-6 left-0 right-0 sm:left-auto sm:right-6 z-50 px-6">
-      <div className="flex justify-center sm:justify-end items-center gap-4">
-        {socialLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#a38ad1] transition-all duration-300 ease-in-out hover:scale-105 hover:[filter:drop-shadow(0_0_6px_#a38ad1)]"
-          >
-            <span className="sr-only">{link.name}</span>
-            {link.icon}
-          </a>
-        ))}
-      </div>
+    <div className="flex items-center gap-3">
+      {socialLinks.map((link) => (
+        <a
+          key={link.name}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#a38ad1] transition-all duration-300 ease-in-out hover:scale-105 hover:[filter:drop-shadow(0_0_6px_#a38ad1)]"
+        >
+          <span className="sr-only">{link.name}</span>
+          {link.icon}
+        </a>
+      ))}
     </div>
   );
 };

@@ -6,7 +6,7 @@ const WhitepaperPage = () => {
   // Helper component for consistent section styling
   const Section = ({ title, children }: { title: string, children: React.ReactNode }) => (
     <section>
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-6 bg-gradient-to-r from-[#a38ad1] to-[#50348f] bg-clip-text text-transparent">
+      <h2 className="text-2xl sm:text-3xl font-semibold mb-6 bg-gradient-to-r from-[#a38ad1] to-[#50348f] bg-clip-text text-transparent [text-shadow:0_0_12px_rgba(163,138,209,0.3)]">
         {title}
       </h2>
       <div className="space-y-4 text-base sm:text-lg text-[#f3f4f7] leading-relaxed">

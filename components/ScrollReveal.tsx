@@ -25,7 +25,7 @@ const ScrollReveal = ({
 
   const transitionClasses = `transition-all duration-600 ease-out`;
 
-  const initialState = `opacity-0 transform translate-y-5`;
+  const initialState = `opacity-0 transform translate-y-8`;
   const visibleState = `opacity-100 transform translate-y-0`;
 
   return (

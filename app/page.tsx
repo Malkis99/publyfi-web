@@ -39,9 +39,11 @@ export default function HomePage() {
           Play. Stream. Earn. Evolve.
         </p>
       </div>
-      <SocialIcons />
-      <footer className="absolute bottom-6 text-center text-text-main/50 text-sm">
-        © {new Date().getFullYear()} PublyFi — All rights reserved.
+      <footer className="absolute bottom-6 w-full px-6 flex justify-center sm:justify-between items-center">
+        <p className="hidden sm:block text-text-main/50 text-sm">
+          © {new Date().getFullYear()} PublyFi — All rights reserved.
+        </p>
+        <SocialIcons />
       </footer>
     </div>
   );
