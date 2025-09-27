@@ -24,7 +24,7 @@ const socialLinks = [
     href: 'https://x.com/publyfi',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="26" height="26">
-        <path d="M22.162 0H1.838C.822 0 0 .822 0 1.838v20.324C0 23.178.822 24 1.838 24h20.324C23.178 24 24 23.178 24 22.162V1.838C24 .822 23.178 0 22.162 0zM7.162 20.838l4.986-6.744 5.03 6.744h2.848L13.2 12l6.51-8.838h-2.848l-4.692 6.372L7.25 3.162H4.4L10.9 12l-6.51 8.838h2.772z"/>
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.55l-5.34-6.987L5.04 21.75H1.73l7.73-8.844L1.25 2.25h5.914l4.823 6.434L18.244 2.25z"/>
       </svg>
     ),
   },
@@ -49,12 +49,10 @@ const SocialIcons = () => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group transition-all duration-300 ease-in-out hover:scale-105"
+            className="text-[#a38ad1] transition-all duration-300 ease-in-out hover:scale-105 hover:[filter:drop-shadow(0_0_6px_#a38ad1)]"
           >
             <span className="sr-only">{link.name}</span>
-            <div className="text-[rgba(255,255,255,0.7)] transition-colors duration-300 ease-in-out group-hover:text-transparent group-hover:bg-gradient-to-r from-[#a38ad1] to-[#50348f] bg-clip-text">
-              {link.icon}
-            </div>
+            {link.icon}
           </a>
         ))}
       </div>

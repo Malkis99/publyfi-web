@@ -20,7 +20,7 @@ export const useScrollReveal = <T extends HTMLElement>(options?: ScrollRevealOpt
         }
       },
       {
-        threshold: options?.threshold || 0.1,
+        threshold: options?.threshold || 0.15,
       }
     );
 

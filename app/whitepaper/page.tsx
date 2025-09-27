@@ -28,7 +28,7 @@ const WhitepaperPage = () => {
         </ScrollReveal>
 
         <div className="space-y-12">
-          <ScrollReveal delay={100}>
+          <ScrollReveal delay={50}>
             <Section title="1. Executive Summary">
               <p>PublyFi is a next-generation Web3 social gaming ecosystem that unites streaming, interactive quests, NFTs, and customizable digital identities into one seamless platform. Unlike traditional platforms where creators are underpaid and users remain passive, PublyFi transforms every interaction into value.</p>
               <p>Core Concept: Streamers create quests, users complete them, and both sides earn rewards — tokens ($PUBL) and NFTs with real utility. Every profile evolves into a living RPG-style identity, enhanced by 3D avatars, achievements, and reputation, secured on Immutable zkEVM for scalability and low-cost transactions.</p>
@@ -40,7 +40,7 @@ const WhitepaperPage = () => {
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={200}>
+          <ScrollReveal delay={100}>
             <Section title="2. Ecosystem Overview">
               <p>PublyFi creates a unified social-gaming ecosystem where streaming, quests, NFTs, and digital identity converge. It connects creators, players, and the platform into a single economy where every action has value.</p>
               <ul className="list-disc list-inside space-y-2 pl-4">
@@ -52,7 +52,7 @@ const WhitepaperPage = () => {
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={300}>
+          <ScrollReveal delay={150}>
             <Section title="3. GameSync – The Heart of PublyFi">
               <p>GameSync is the data and loyalty engine of PublyFi — the system that turns every action (watching, playing, trading, questing) into measurable progress, reputation, and rewards.</p>
               <ul className="list-disc list-inside space-y-2 pl-4">
@@ -64,7 +64,7 @@ const WhitepaperPage = () => {
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={400}>
+          <ScrollReveal delay={200}>
             <Section title="4. Business Model">
               <p>PublyFi combines subscriptions, NFTs, and a quest-driven creator economy into a multi-layered revenue model that scales with user growth.</p>
               <ul className="list-disc list-inside space-y-2 pl-4">
@@ -78,14 +78,14 @@ const WhitepaperPage = () => {
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={500}>
+          <ScrollReveal delay={250}>
             <Section title="5. Market Analysis">
               <p>The global gaming industry surpasses $200B annually with over 3 billion gamers. Streaming platforms dominate content while Web3 introduces true ownership.</p>
               <p>PublyFi unifies streaming, quests, and NFTs, capturing both gaming and Web3/NFT markets — positioning itself as the first social-gaming economy blending entertainment with ownership.</p>
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={600}>
+          <ScrollReveal delay={300}>
             <Section title="6. Tokenomics – $PUBL">
               <ul className="list-disc list-inside space-y-2 pl-4">
                   <li><strong>Utility:</strong> Quests & Rewards, NFT Transactions, Loot Cases, Profile Upgrades, DAO Governance, Staking & Burns.</li>
@@ -95,49 +95,49 @@ const WhitepaperPage = () => {
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={700}>
+          <ScrollReveal delay={350}>
             <Section title="7. Governance Model">
                <p>PublyFi operates under a DAO where voting power is earned through activity and token ownership. Proposals, emissions, and ecosystem upgrades are voted on by the community.</p>
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={800}>
+          <ScrollReveal delay={400}>
             <Section title="8. Compliance & Legal Framework">
               <p>PublyFi integrates GDPR-compliant data storage, KYC/AML, DAO legal wrappers, and trademark protections — ensuring long-term viability and trust for users and partners.</p>
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={900}>
+          <ScrollReveal delay={450}>
             <Section title="9. Token Utility in Depth">
               <p>$PUBL is the access, utility, and governance engine of PublyFi’s economy. Demand drivers include premium access, creator tools, boosts, and DAO voting; sinks include burns, fusion, and customization fees.</p>
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={1000}>
+          <ScrollReveal delay={500}>
             <Section title="10. Technical Architecture">
               <p>Built with a layered architecture (Frontend, Backend, Blockchain, API/SDK), PublyFi ensures scalability, interoperability, and future-proof performance via Immutable zkEVM.</p>
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={1100}>
+          <ScrollReveal delay={550}>
             <Section title="11. Security & Protection Framework">
               <p>PublyFi ensures trust with audits, multisig treasury, anti-bot AI, progressive KYC, and transparent DAO moderation.</p>
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={1200}>
+          <ScrollReveal delay={600}>
             <Section title="12. Blockchain Economy">
               <p>Immutable zkEVM + multi-chain roadmap (Polygon, Arbitrum, Solana, BNB). True ownership, transparent economy, scalable growth, and global interoperability.</p>
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={1300}>
+          <ScrollReveal delay={650}>
             <Section title="13. Content & Interaction">
               <p>Core formats: Streams, Reels, Quests, Events. Interaction via GameSync, social tools, leaderboards, and seasonal rewards.</p>
             </Section>
           </ScrollReveal>
 
-          <ScrollReveal delay={1400}>
+          <ScrollReveal delay={700}>
             <Section title="Final Statement">
               <p>PublyFi is more than a platform — it’s building a digital civilization where players, streamers, and creators own their progress, identity, and economy.</p>
               <p><strong>PublyFi — the home of gaming freedom.</strong></p>
@@ -145,7 +145,7 @@ const WhitepaperPage = () => {
           </ScrollReveal>
         </div>
 
-        <ScrollReveal delay={1500}>
+        <ScrollReveal delay={750}>
           <div className="mt-20 text-center">
             <CosmicButton
               label="Join Waitlist"
