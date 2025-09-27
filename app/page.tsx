@@ -1,5 +1,6 @@
 import CosmicButton from '@/components/CosmicButton';
 import AnimatedTitle from '@/components/AnimatedTitle';
+import SocialIcons from '@/components/SocialIcons';
 
 export default function HomePage() {
   return (
@@ -38,6 +39,7 @@ export default function HomePage() {
           Play. Stream. Earn. Evolve.
         </p>
       </div>
+      <SocialIcons />
       <footer className="absolute bottom-6 text-center text-text-main/50 text-sm">
         © {new Date().getFullYear()} PublyFi — All rights reserved.
       </footer>

@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import DocsSidebar from '@/components/docs/sidebar';
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote';
+import ScrollReveal from '@/components/ScrollReveal';
 
 const docSections = [
   { slug: 'overview', title: 'Overview' },
@@ -16,13 +17,6 @@ const docSections = [
   { slug: 'security-compliance', title: 'Security & Compliance' },
   { slug: 'investor-faq', title: 'Investor FAQ' },
 ];
-
-// A simple component for fade-in transitions
-const FadeIn = ({ children, show }: { children: ReactNode; show: boolean }) => (
-  <div className={`transition-opacity duration-200 ${show ? 'opacity-100' : 'opacity-0'}`}>
-    {children}
-  </div>
-);
 
 const DocsPage = () => {
   const [activeSlug, setActiveSlug] = useState('overview');
@@ -71,7 +65,7 @@ const DocsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bg-primary to-bg-secondary text-text-main">
+    <div className="min-h-screen text-text-main">
       <Navbar />
       <main className="container mx-auto px-4 py-8 lg:py-12">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
@@ -82,11 +76,11 @@ const DocsPage = () => {
           />
 
           <section className="lg:col-span-9">
-            <div className="bg-white/5 border border-white/10 rounded-xl min-h-[60vh]">
+            <div className="min-h-[60vh]">
               <div className="max-w-4xl mx-auto px-4 md:px-8 py-10 prose prose-invert">
-                <FadeIn show={!loading}>
+                <ScrollReveal>
                   <ContentDisplay />
-                </FadeIn>
+                </ScrollReveal>
               </div>
             </div>
           </section>

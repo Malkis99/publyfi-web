@@ -24,10 +24,9 @@ export default {
       typography: ({ theme }) => ({
         invert: {
           css: {
-            '--tw-prose-invert-body': 'rgba(243, 244, 247, 0.9)',
-            '--tw-prose-invert-headings': theme('colors.white'),
+            '--tw-prose-invert-body': '#f3f4f7',
             '--tw-prose-invert-links': theme('colors.accent'),
-            '--tw-prose-invert-bold': theme('colors.white'),
+            '--tw-prose-invert-bold': theme('colors.text-main'),
             '--tw-prose-invert-bullets': theme('colors.accent'),
             '--tw-prose-invert-counters': theme('colors.accent'),
             '--tw-prose-invert-quotes': 'rgba(255, 255, 255, 0.8)',
@@ -39,9 +38,11 @@ export default {
               fontSize: '1rem',
               lineHeight: '1.625',
               marginBottom: '1rem',
+              color: '#f3f4f7',
             },
             'ul, ol': {
               paddingLeft: '1.5rem',
+              color: '#f3f4f7',
             },
             li: {
               marginTop: '0.5rem',
@@ -49,18 +50,21 @@ export default {
             },
 
             // Custom element styles
+            'h1, h2, h3, h4, h5, h6': {
+              background: 'linear-gradient(to right, #a38ad1, #50348f)',
+              'background-clip': 'text',
+              color: 'transparent',
+              'text-shadow': '0 0 12px rgba(163, 138, 209, 0.3)',
+            },
             h1: {
               fontSize: '1.875rem',
               fontWeight: '800',
               letterSpacing: '-0.025em',
-              color: theme('colors.white'),
               marginBottom: '2rem',
-              textShadow: '0 0 8px rgba(163, 138, 209, 0.6)',
             },
             h2: {
               fontSize: '1.5rem',
               fontWeight: '600',
-              color: theme('colors.accent'),
               marginTop: '2.5rem',
               marginBottom: '0.75rem',
               borderBottom: 'none',
@@ -69,7 +73,6 @@ export default {
             h3: {
               fontSize: '1.25rem',
               fontWeight: '600',
-              color: theme('colors.accent'),
               marginTop: '1.5rem',
               marginBottom: '0.5rem',
             },
