@@ -7,24 +7,14 @@ import { motion } from 'framer-motion';
 import StaticStarfield from '@/components/StaticStarfield';
 import { Mail, KeyRound, LogIn, UserPlus, Fingerprint, Smartphone, ArrowLeft, ShieldCheck } from 'lucide-react';
 
-// Copied from UpgradeModal.tsx and enhanced as per feedback
-const Particles = () => (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-2xl">
-      {Array.from({ length: 40 }).map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute h-1 w-24 bg-gradient-to-r from-purple-500/0 via-white/90 to-purple-500/0"
-          initial={{ y: `${Math.random() * 100}%`, x: -250, opacity: 0 }}
-          animate={{ x: '150%' }}
-          transition={{
-            duration: Math.random() * 5 + 4,
-            repeat: Infinity,
-            repeatType: 'loop',
-            delay: Math.random() * 8,
-            ease: 'linear'
-          }}
+// New minimalist starfield for the panel background
+const MinimalistStarfield = () => (
+    <div className="absolute inset-0 w-full h-full -z-10 rounded-2xl overflow-hidden">
+        <StaticStarfield
+            particleCount={100}
+            radiusRange={[0.3, 0.75]} // 25% smaller stars
+            className="absolute top-0 left-0 w-full h-full"
         />
-      ))}
     </div>
 );
 
@@ -76,7 +66,7 @@ export const AuthGateway = () => {
         className="relative z-10 w-full max-w-lg p-8 space-y-6 bg-black/50 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10"
         style={{ boxShadow: "0 0 25px 5px rgba(192, 132, 252, 0.2), 0 0 10px 2px rgba(192, 132, 252, 0.15)" }}
       >
-        <Particles />
+        <MinimalistStarfield />
 
         {authMode === 'password' && (
           <motion.div
@@ -105,7 +95,13 @@ export const AuthGateway = () => {
               </div>
               {error && <p className="text-red-400 text-xs text-center pt-1">{error}</p>}
               <div className="pt-2 flex items-center gap-x-4">
-                <button type="submit" className="w-1/2 flex items-center justify-center py-3 px-4 font-semibold text-white bg-purple-600 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-purple-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/30">
+                <button
+                  type="submit"
+                  className="w-1/2 flex items-center justify-center py-3 px-4 font-semibold text-white rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  style={{ backgroundColor: '#4B0082', boxShadow: '0 0 15px 3px rgba(75, 0, 130, 0.4)' }}
+                  onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#5a009a'}
+                  onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#4B0082'}
+                >
                   <LogIn className="mr-2 h-5 w-5" />
                   Sign In
                 </button>
