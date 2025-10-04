@@ -67,7 +67,7 @@ export const Modal = ({ isOpen, onClose, children, showParticles = true, size = 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 lg:pl-80"
           onClick={onClose}
         >
           <motion.div
