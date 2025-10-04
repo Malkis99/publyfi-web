@@ -34,7 +34,7 @@ export const ProfileHeader = () => {
       {/* This component no longer has its own outer card shell. It's part of a unified block. */}
       <div>
         {/* Banner */}
-        <div className="relative h-36 rounded-t-xl bg-gradient-to-r from-indigo-900 via-purple-900 to-fuchsia-900 w-full">
+        <div className="relative h-36 bg-gradient-to-r from-indigo-900 via-purple-900 to-fuchsia-900 w-full">
             {/* Top-right Action Buttons */}
             <div className="absolute top-3 right-3 flex items-center space-x-2">
                 <ActionButton icon={Gift} label="Weekly Reward" onClick={() => setRewardModalOpen(true)} />
