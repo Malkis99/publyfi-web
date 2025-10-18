@@ -20,14 +20,6 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { useState } from 'react';
 import { ArrowRightLeft, Landmark, History, Coins } from 'lucide-react';
 
-const GlowCard = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-  <div className={`relative bg-black/30 backdrop-blur-sm p-4 rounded-lg border border-violet-500/20 shadow-lg glow-border ${className}`}>
-    <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-transparent via-violet-500 to-transparent animate-border-light-vertical" />
-    {children}
-    <div className="absolute inset-0 rounded-lg border-2 border-violet-500/50 pointer-events-none animate-pulse-slow opacity-30"></div>
-  </div>
-);
-
 const WalletSection = () => {
   const [isConnected, setIsConnected] = useState(false);
 
@@ -183,121 +175,99 @@ const FilterSection = ({ title, items, activeItem, onItemClick, isGrid, isOpen, 
 };
 
   return (
-    <div className="h-full w-full flex flex-col space-y-4">
-      {/* Wallet Section (Fixed) */}
-      <div className="flex-shrink-0">
-        <WalletSection />
-      </div>
+    <div className="h-full w-full bg-black/20 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex flex-col space-y-4 shadow-2xl shadow-purple-500/10">
+        <div className="flex-shrink-0">
+            <WalletSection />
+        </div>
 
-      {/* Search Bar (Fixed) */}
-      <div className="relative flex-shrink-0">
-        <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-5 w-5 text-violet-400/50 pointer-events-none" />
-        <Input
-          placeholder="Search for items..."
-          className="w-full pl-11 pr-4 py-2 rounded-lg bg-black/30 border border-violet-400/20 text-white placeholder:text-gray-500 focus:border-violet-400 focus:ring-violet-400 focus:ring-opacity-50 focus:shadow-[0_0_15px_rgba(80,52,143,0.25)] transition-all duration-300"
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
+        <div className="relative flex-shrink-0">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-5 w-5 text-violet-400/50 pointer-events-none" />
+            <Input
+                placeholder="Search for items..."
+                className="w-full pl-11 pr-4 py-2 rounded-lg bg-black/30 border border-violet-400/20 text-white placeholder:text-gray-500 focus:border-violet-400 focus:ring-violet-400 focus:ring-opacity-50 focus:shadow-[0_0_15px_rgba(80,52,143,0.25)] transition-all duration-300"
+                onChange={(e) => setSearch(e.target.value)}
+            />
+        </div>
 
-      {/* Scrollable Filters Area */}
-      <div className="flex-grow overflow-y-auto space-y-4 pr-2" onWheel={handleWheel}>
-        <GlowCard>
-          <h3 className="text-lg font-semibold text-white mb-4 flex items-center"><Filter className="mr-2 h-5 w-5"/> Filters</h3>
-          <div className="space-y-4">
-          <FilterSection
-            title="Category"
-            items={[
-              { value: 'all', label: 'All', icon: LayoutGrid },
-              { value: 'Equipment', label: 'Equipment', icon: Shirt },
-              { value: 'Profile', label: 'Profile', icon: UserCog },
-              { value: 'Utility', label: 'Utility', icon: Shield },
-              { value: 'Pets', label: 'Pets', icon: PawPrint },
-              { value: 'Cases', label: 'Cases', icon: Box },
-            ]}
-            activeItem={activeCategory}
-            onItemClick={handleCategoryClick}
-            setFilter={setCategory}
-            isOpen={openSections.category}
-            onOpenChange={handleOpenChange('category')}
-          />
-          <FilterSection
-            title="Genre"
-            items={genres.map(g => ({ value: g, label: g }))}
-            activeItem={activeGenre}
-            onItemClick={handleGenreClick}
-            setFilter={setGenre}
-            isGrid
-            isOpen={openSections.genre}
-            onOpenChange={handleOpenChange('genre')}
-          />
-            <div>
-            <Label className="text-gray-300">Rarity</Label>
-            <Select onValueChange={(value) => setRarity(value as Rarity | 'all')} value={rarity}>
-              <SelectTrigger className="w-full bg-black/20 border-violet-500/30 hover:bg-violet-500/10 transition">
-                <SelectValue placeholder="All Rarities" />
-              </SelectTrigger>
-                <SelectContent className="bg-black/80 backdrop-blur-xl border-violet-500/30 text-white">
-                  <SelectItem value="all">All Rarities</SelectItem>
-                  <SelectItem value="Common">Common</SelectItem>
-                  <SelectItem value="Rare">Rare</SelectItem>
-                  <SelectItem value="Epic">Epic</SelectItem>
-                  <SelectItem value="Legendary">Legendary</SelectItem>
-                  <SelectItem value="Mythic">Mythic</SelectItem>
-                </SelectContent>
-              </Select>
+        <div className="flex-grow overflow-y-auto space-y-4 pr-2 -mr-2" onWheel={handleWheel}>
+            <div className="p-4 rounded-lg bg-white/5">
+                <h3 className="text-lg font-semibold text-white mb-4 flex items-center"><Filter className="mr-2 h-5 w-5" /> Filters</h3>
+                <div className="space-y-4">
+                    <FilterSection
+                        title="Category"
+                        items={[
+                            { value: 'all', label: 'All', icon: LayoutGrid },
+                            { value: 'Equipment', label: 'Equipment', icon: Shirt },
+                            { value: 'Profile', label: 'Profile', icon: UserCog },
+                            { value: 'Utility', label: 'Utility', icon: Shield },
+                            { value: 'Pets', label: 'Pets', icon: PawPrint },
+                            { value: 'Cases', label: 'Cases', icon: Box },
+                        ]}
+                        activeItem={activeCategory}
+                        onItemClick={handleCategoryClick}
+                        setFilter={setCategory}
+                        isOpen={openSections.category}
+                        onOpenChange={handleOpenChange('category')}
+                    />
+                    <FilterSection
+                        title="Genre"
+                        items={genres.map(g => ({ value: g, label: g }))}
+                        activeItem={activeGenre}
+                        onItemClick={handleGenreClick}
+                        setFilter={setGenre}
+                        isGrid
+                        isOpen={openSections.genre}
+                        onOpenChange={handleOpenChange('genre')}
+                    />
+                    <div>
+                        <Label className="text-gray-300">Rarity</Label>
+                        <Select onValueChange={(value) => setRarity(value as Rarity | 'all')} value={rarity}>
+                            <SelectTrigger className="w-full bg-black/20 border-violet-500/30 hover:bg-violet-500/10 transition">
+                                <SelectValue placeholder="All Rarities" />
+                            </SelectTrigger>
+                            <SelectContent className="bg-black/80 backdrop-blur-xl border-violet-500/30 text-white">
+                                <SelectItem value="all">All Rarities</SelectItem>
+                                <SelectItem value="Common">Common</SelectItem>
+                                <SelectItem value="Rare">Rare</SelectItem>
+                                <SelectItem value="Epic">Epic</SelectItem>
+                                <SelectItem value="Legendary">Legendary</SelectItem>
+                                <SelectItem value="Mythic">Mythic</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div>
+                        <Label>Price Range</Label>
+                        <div className="h-10 bg-gray-800 rounded-md flex items-center justify-center text-gray-500">Slider Placeholder</div>
+                    </div>
+                    <div className="pt-4 border-t border-violet-500/10">
+                        <Button variant="link" className="w-full text-center text-violet-400 hover:text-white" onClick={resetFilters}>
+                            Reset Filters
+                        </Button>
+                    </div>
+                </div>
             </div>
-            <div>
-              <Label>Price Range</Label>
-              <div className="h-10 bg-gray-800 rounded-md flex items-center justify-center text-gray-500">Slider Placeholder</div>
+
+            <div className="p-4 rounded-lg bg-white/5">
+                <h3 className="text-lg font-semibold text-white mb-4 flex items-center"><SortAsc className="mr-2 h-5 w-5" /> Sort By</h3>
+                <Select onValueChange={(value) => setSort(value as SortOption)} defaultValue="recent">
+                    <SelectTrigger><SelectValue placeholder="Recently Added" /></SelectTrigger>
+                    <SelectContent className="bg-black/80 backdrop-blur-xl border-violet-500/30 text-white">
+                        <SelectItem value="recent">Recently Added</SelectItem>
+                        <SelectItem value="price_asc">Price: Low to High</SelectItem>
+                        <SelectItem value="price_desc">Price: High to Low</SelectItem>
+                        <SelectItem value="rarity">Rarity</SelectItem>
+                    </SelectContent>
+                </Select>
             </div>
-             <div className="pt-4 border-t border-violet-500/10">
-                <Button variant="link" className="w-full text-center text-violet-400 hover:text-white" onClick={resetFilters}>
-                Reset Filters
-                </Button>
+
+            <div className="p-4 rounded-lg bg-white/5">
+                <h3 className="text-lg font-semibold text-white mb-4">News & Drops</h3>
+                <div className="text-sm text-gray-400">
+                    <p>Upcoming: &apos;Cybernetic Dreams&apos; collection drops next week!</p>
+                </div>
             </div>
-          </div>
-        </GlowCard>
-
-        <GlowCard>
-          <h3 className="text-lg font-semibold text-white mb-4 flex items-center"><SortAsc className="mr-2 h-5 w-5"/> Sort By</h3>
-          <Select onValueChange={(value) => setSort(value as SortOption)} defaultValue="recent">
-            <SelectTrigger><SelectValue placeholder="Recently Added" /></SelectTrigger>
-            <SelectContent className="bg-black/80 backdrop-blur-xl border-violet-500/30 text-white">
-              <SelectItem value="recent">Recently Added</SelectItem>
-              <SelectItem value="price_asc">Price: Low to High</SelectItem>
-              <SelectItem value="price_desc">Price: High to Low</SelectItem>
-              <SelectItem value="rarity">Rarity</SelectItem>
-            </SelectContent>
-          </Select>
-        </GlowCard>
-
-
-        <GlowCard>
-          <h3 className="text-lg font-semibold text-white mb-4">News & Drops</h3>
-          <div className="text-sm text-gray-400">
-              <p>Upcoming: &apos;Cybernetic Dreams&apos; collection drops next week!</p>
-          </div>
-        </GlowCard>
-      </div>
-
-      <style jsx>{`
-        .glow-border {
-          box-shadow: 0 0 5px rgba(80, 52, 143, 0.3), 0 0 10px rgba(80, 52, 143, 0.2);
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 5s infinite cubic-bezier(0.4, 0, 0.6, 1);
-        }
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.6; }
-        }
-        .animate-border-light-vertical {
-          animation: move-border-light 8s linear infinite;
-        }
-        @keyframes move-border-light {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(100%); }
-        }
+        </div>
+        <style jsx>{`
         /* Custom scrollbar for webkit browsers */
         .overflow-y-auto::-webkit-scrollbar {
             width: 6px;

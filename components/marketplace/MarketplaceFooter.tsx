@@ -39,22 +39,23 @@ const MarketplaceFooter = () => {
 
   return (
     <>
-      <footer className="w-full py-6 border-t border-white/10 bg-black/20 backdrop-blur-lg">
+      <footer className="w-full py-6 border-t border-purple-900/50 bg-black/20 relative">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#a38ad1] to-transparent animate-aurora-border"></div>
         <div className="container mx-auto px-4">
           <div className="flex justify-center items-center flex-wrap gap-x-12 gap-y-4">
             {footerLinks.map((link) => (
               <Button
                 key={link.name}
                 variant="link"
-                className="relative group text-gray-400 hover:text-violet-300 text-lg transition-all duration-300"
+                className="text-purple-300/70 hover:text-white text-lg transition-all duration-300"
                 onClick={() => openModal(link.content)}
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-violet-500/10 to-transparent scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out origin-bottom opacity-0 group-hover:opacity-100"></span>
               </Button>
             ))}
           </div>
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#a38ad1] to-transparent animate-aurora-border-rev"></div>
       </footer>
 
       {modalContent && (
