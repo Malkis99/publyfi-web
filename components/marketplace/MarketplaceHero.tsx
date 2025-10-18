@@ -1,13 +1,13 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import StaticStarfield from '@/components/StaticStarfield';
+import ParticleBackground from '@/components/community/ParticleBackground';
 
 const MarketplaceHero = () => {
   return (
     <div className="text-center py-16 px-6 relative overflow-hidden bg-[#140f22] border-y border-purple-900/50">
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{backgroundImage: 'radial-gradient(circle at 50% 20%, #50348f, transparent 50%)'}}></div>
-      <StaticStarfield />
+      <ParticleBackground />
       <div className="absolute inset-0 bg-gradient-to-t from-[#140f22] via-[#140f22]/80 to-transparent z-10"></div>
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#a38ad1] to-transparent animate-aurora-border"></div>
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#a38ad1] to-transparent animate-aurora-border-rev"></div>
@@ -25,7 +25,6 @@ const MarketplaceHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-6xl font-bold tracking-tight text-white"
-          style={{ textShadow: '0 0 15px rgba(163, 138, 209, 0.5), 0 0 30px rgba(163, 138, 209, 0.3)' }}
         >
           PublyFi Marketplace
         </motion.h1>

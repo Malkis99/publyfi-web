@@ -6,21 +6,18 @@ def run_verification(playwright):
     page = context.new_page()
 
     try:
-        # Verify Marketplace Page
+        # Verify Marketplace Page Hero
         page.goto("http://localhost:3000/marketplace")
         page.wait_for_load_state('networkidle')
         expect(page.get_by_role("heading", name="PublyFi Marketplace")).to_be_visible()
-        page.screenshot(path="jules-scratch/verification/marketplace_view.png")
+        page.screenshot(path="jules-scratch/verification/marketplace_hero_view.png")
 
-        # Verify Community Page Modal
-        page.goto("http://localhost:3000/community")
-        page.wait_for_load_state('networkidle')
-
+        # Verify Marketplace Page Modal
         # Scroll to the footer to ensure it's in view
         page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
 
         # Click the footer link to open the modal
-        page.get_by_role("button", name="Community Rules").click()
+        page.get_by_role("button", name="Trading Rules").click()
 
         # Wait for the modal to be visible
         modal = page.get_by_role("dialog")
@@ -29,7 +26,7 @@ def run_verification(playwright):
         # Allow time for animations
         page.wait_for_timeout(500)
 
-        page.screenshot(path="jules-scratch/verification/community_modal_view.png")
+        page.screenshot(path="jules-scratch/verification/marketplace_modal_view.png")
 
     finally:
         browser.close()

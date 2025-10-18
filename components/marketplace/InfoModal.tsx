@@ -18,29 +18,17 @@ const InfoModal = ({ isOpen, onClose, title, children }: InfoModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl bg-black/60 backdrop-blur-xl border-2 border-violet-400/20 text-white p-8 shadow-2xl shadow-violet-500/10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
-        >
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-bold text-violet-300">{title}</DialogTitle>
-          </DialogHeader>
-          <div className="mt-6 text-gray-300 max-h-[60vh] overflow-y-auto pr-4 space-y-4">
+      <DialogContent
+        className="bg-[#1a152e]/80 backdrop-blur-lg border-purple-700/50 text-white max-w-3xl shadow-glow shadow-purple-500/20"
+        role="dialog"
+        aria-modal="true"
+      >
+        <DialogHeader>
+          <DialogTitle className="text-2xl font-bold text-white">{title}</DialogTitle>
+        </DialogHeader>
+        <div className="prose prose-invert prose-p:text-gray-300 prose-headings:text-white pb-4 max-h-[60vh] overflow-y-auto">
             {children}
-          </div>
-        </motion.div>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute top-4 right-4 text-gray-400 hover:text-white hover:bg-white/10 rounded-full"
-          onClick={onClose}
-          aria-label="Close"
-        >
-          <X className="h-6 w-6" />
-        </Button>
+        </div>
       </DialogContent>
     </Dialog>
   );
