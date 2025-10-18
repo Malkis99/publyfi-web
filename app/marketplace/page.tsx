@@ -100,7 +100,7 @@ const MarketplacePage = () => {
 
           {/* Desktop Panel */}
           <aside className="hidden lg:block w-96 flex-shrink-0 p-4">
-            <div className="sticky top-0 h-screen pt-80">
+            <div className="sticky top-0 h-screen pt-24">
               <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="h-full w-full">
                 {controlPanel}
               </motion.div>

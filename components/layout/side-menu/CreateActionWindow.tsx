@@ -44,10 +44,10 @@ const CreateActionWindow = ({ isOpen, onClose, buttonRef }: CreateActionWindowPr
   return (
     <div
       ref={windowRef}
-      className="absolute bottom-full mb-2 right-0 w-48 z-10
+      className="absolute top-full mt-2 right-0 w-48 z-10
                  p-2 bg-gradient-to-br from-[#231d3b] to-[#140f22]
                  rounded-xl border border-highlight/50 shadow-glow shadow-lg
-                 origin-bottom-right transition-all duration-300 ease-out
+                 origin-top-right transition-all duration-300 ease-out
                  animate-fade-scale-in"
     >
       <ul className="space-y-1">
