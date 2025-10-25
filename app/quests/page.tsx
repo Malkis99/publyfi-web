@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import QuestsHero from '@/components/quests/HeroSection';
 import { QuestCard } from '@/components/quests/QuestCard';
 import QuestChain from '@/components/quests/QuestChain';
@@ -12,7 +13,7 @@ import MyQuestsTab from '@/components/quests/MyQuestsTab';
 import { SmartQuestGenerator } from '@/components/quests/SmartQuestGenerator';
 import StaticStarfield from '@/components/StaticStarfield';
 import DailyQuestSupport from '@/components/quests/DailyQuestSupport';
-import WeeklyRewardChest from '@/components/quests/WeeklyRewardChest';
+import WeeklyReward from '@/components/quests/WeeklyReward';
 import LimitedTimeQuests from '@/components/quests/LimitedTimeQuests';
 import PlayerReputation from '@/components/quests/PlayerReputation';
 import Leaderboard from '@/components/quests/Leaderboard';
@@ -93,31 +94,41 @@ const QuestsPage = () => {
                   acceptedQuests={acceptedQuests}
                 />
               ))}
-              <WeeklyRewardChest />
+              <WeeklyReward />
               <LimitedTimeQuests />
               <DailyQuestSupport />
             </div>
           </aside>
 
           {/* Main Content - Quest Feed */}
-          <section className="space-y-8">
-            {activeTab === 'Home' && (
-              <LivingFeed onQuestClick={setSelectedQuest} acceptedQuests={acceptedQuests} />
-            )}
-            {activeTab === 'My Quests' && (
-              <MyQuestsTab
-                acceptedQuests={mockQuests.filter(q => acceptedQuests.includes(q.id) && q.status !== 'completed')}
-                completedQuests={mockQuests.filter(q => q.status === 'completed')}
-                onQuestClick={setSelectedQuest}
-              />
-            )}
-            {(activeTab === 'Streamer Quests' || activeTab === 'Platform Quests') && (
-              <FilteredQuestList
-                quests={getFilteredQuests()}
-                onQuestClick={setSelectedQuest}
-                acceptedQuests={acceptedQuests}
-              />
-            )}
+          <section className="space-y-8 relative">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              >
+                {activeTab === 'Home' && (
+                  <LivingFeed onQuestClick={setSelectedQuest} acceptedQuests={acceptedQuests} />
+                )}
+                {activeTab === 'My Quests' && (
+                  <MyQuestsTab
+                    acceptedQuests={mockQuests.filter(q => acceptedQuests.includes(q.id) && q.status !== 'completed')}
+                    completedQuests={mockQuests.filter(q => q.status === 'completed')}
+                    onQuestClick={setSelectedQuest}
+                  />
+                )}
+                {(activeTab === 'Streamer Quests' || activeTab === 'Platform Quests') && (
+                  <FilteredQuestList
+                    quests={getFilteredQuests()}
+                    onQuestClick={setSelectedQuest}
+                    acceptedQuests={acceptedQuests}
+                  />
+                )}
+              </motion.div>
+            </AnimatePresence>
           </section>
 
           {/* Right Sidebar - Widgets */}

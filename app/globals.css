@@ -26,6 +26,13 @@
     }
   }
 
+.quoted-text::before {
+  content: '"';
+}
+.quoted-text::after {
+  content: '"';
+}
+
   @keyframes fade-scale-in {
     from {
       opacity: 0;
