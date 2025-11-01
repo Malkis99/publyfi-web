@@ -1,0 +1,389 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-fade-scale-in {
+    animation: fade-scale-in 0.5s ease-out forwards;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 4s infinite linear;
+    background-size: 200% 100%;
+  }
+
+  .animate-title-shimmer {
+    animation: title-shimmer 15s infinite linear;
+    background-size: 400% 100%;
+  }
+
+  @keyframes title-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  @keyframes fade-scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+/* === Character Zone Background Animations === */
+@keyframes fog-motion {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1) translate(10px, 5px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.7;
+  }
+}
+
+@keyframes wave-motion {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Enhanced Pedestal Animations */
+@keyframes pedestal-pulse {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pedestal-glow-pulse {
+  0% {
+    opacity: 0.7;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(15px);
+  }
+}
+
+@keyframes inner-ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Atmospheric Animations */
+@keyframes energy-haze-rise {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes container-pulse {
+  0%, 100% {
+    box-shadow: inset 0 0 15px 5px rgba(100, 100, 200, 0.05);
+  }
+  50% {
+    box-shadow: inset 0 0 20px 7px rgba(120, 120, 220, 0.08);
+  }
+}
+
+/* Panel Frame Animation */
+@keyframes waterfall-flow {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes pedestal-scan {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced Background Animations */
+@keyframes fog-layer-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, -10%) scale(1.2); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes fog-layer-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5%, 10%) scale(1.2); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes particle-fade {
+  0%, 100% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* "Alive" Background Animations */
+@keyframes gas-swirl-1 {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  50% { transform: translate(10%, -15%) scale(1.3); opacity: 0.8; }
+  100% { transform: translate(0, 0) scale(1); opacity: 1; }
+}
+@keyframes gas-swirl-2 {
+  0% { transform: translate(0, 0) scale(1.2); opacity: 0.7; }
+  50% { transform: translate(-10%, 15%) scale(1); opacity: 1; }
+  100% { transform: translate(0, 0) scale(1.2); opacity: 0.7; }
+}
+@keyframes energy-pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+@keyframes particle-trail {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+@keyframes energy-ripple-1 {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+@keyframes energy-ripple-2 {
+  0% { transform: scale(0.7); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+@keyframes light-sweep-1 {
+  0% { transform: translateX(0) skewX(-25deg); }
+  100% { transform: translateX(200vw) skewX(-25deg); }
+}
+@keyframes light-sweep-2 {
+  0% { transform: translateX(0) skewX(-25deg); }
+  100% { transform: translateX(-200vw) skewX(-25deg); }
+}
+
+/* Control Panel Animation */
+@keyframes panel-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Pedestal Reflection Animation */
+@keyframes ambient-reflection-shimmer {
+  0% {
+    opacity: 0.6;
+    transform: translateY(20px) rotateX(85deg) scale(1.2);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(20px) rotateX(85deg) scale(1.25);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(20px) rotateX(85deg) scale(1.2);
+  }
+}
+
+/* "Alive" Control Button Animations */
+@keyframes button-idle-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 16px 3px rgba(0, 255, 255, 0.4);
+  }
+}
+
+@keyframes light-trail-shimmer {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Cosmic background helper */
+.cosmic-bg {
+  background-image: linear-gradient(135deg, #140f22 0%, #231d3b 60%);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(163, 138, 209, 0.35))
+      drop-shadow(0 0 15px rgba(163, 138, 209, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(163, 138, 209, 0.5))
+      drop-shadow(0 0 25px rgba(163, 138, 209, 0.2));
+  }
+}
+
+/* Updated entrance animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Unified scroll-triggered animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up-on-scroll {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-timeline: view();
+  animation-range-start: entry 10%;
+  animation-range-end: cover 30%;
+}
+
+@keyframes title-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    text-shadow: 0 0 2px rgba(163, 138, 209, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 12px rgba(163, 138, 209, 0.5);
+  }
+}
+
+.animate-title-reveal {
+  opacity: 0;
+  animation: title-reveal 0.8s ease-out forwards;
+  animation-timeline: view();
+  animation-range-start: entry 10%;
+  animation-range-end: cover 30%;
+}
+
+@layer utilities {
+  .page-transition-enter {
+    animation: fadeInZoom 0.2s ease-in-out forwards;
+  }
+  .page-transition-exit {
+    animation: fadeOutZoom 0.2s ease-in-out forwards;
+  }
+  @keyframes fadeInZoom {
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes fadeOutZoom {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+  }
+}
+
+/* Custom Cinematic Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #50348f;
+  border-radius: 10px;
+  border: 1px solid rgba(163, 138, 209, 0.5);
+  box-shadow: 0 0 8px rgba(163, 138, 209, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #a38ad1;
+  box-shadow: 0 0 12px rgba(163, 138, 209, 0.8);
+}
